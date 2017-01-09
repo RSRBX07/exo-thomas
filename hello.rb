@@ -2,4 +2,8 @@ puts "Bonjour quel est votre nom ?"
 
 name = gets
 
-print "Comment vas-tu #{name} ?"
+puts "Comment vas-tu #{name} ?"
+
+puts "Salut #{name}" 
+puts "Salut #{name}"
+puts "Salut #{name}"
