@@ -1,9 +1,8 @@
 puts "Bonjour quel est votre nom ?"
 
-name = gets
+name = gets.chomp
 
 puts "Comment vas-tu #{name} ?"
 
-puts "Salut #{name}" 
-puts "Salut #{name}"
-puts "Salut #{name}"
+3.times {puts "Salut #{name}"}
+
