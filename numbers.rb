@@ -8,6 +8,10 @@ puts calcul
 
 #2. calculez ton age en seconde
 
-calcul = 35 * 365 * 24 * 60 * 60
+now = Time.now
 
-puts calcul
+btime = Time.new "1981/06/02"
+
+age_in_sec = now - btime
+
+puts age_in_sec
