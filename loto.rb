@@ -11,7 +11,7 @@ puts "le tirage du jour est #{day}"
 # affichage de la cagnote entre 100 et 500k€
 # le vendredi 13, la cagonte est de 2 millions
 
-is_vendredi_13 = date.today
+is_vendredi_13 = false
 if is_vendredi_13
   cagnote = 2000000
 else
