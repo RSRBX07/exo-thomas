@@ -1,3 +1,7 @@
+# demander une grille de jeu
+puts "Entrer votre grille du loto "
+grille = gets.chomp
+
 # affiche le tirage d'un loto
 
 loto = (1..45).to_a
@@ -19,3 +23,6 @@ else
 end
 
 puts "la cagnote du jour est de  #{cagnote} €"
+
+# afficher si gagne ou perdu
+puts "#{grille}"
