@@ -1,7 +1,9 @@
 # affiche le tirage d'un loto
 
-loto = [rand(1..45), rand(1..45), rand(1..45), rand(1..45), rand(1..45)]
+loto = (1..45).to_a
 
-day = loto
+tirage = loto.shuffle.take 5
+
+day = tirage.sort
 
 puts "le tirage du jour est #{day}"
