@@ -24,5 +24,13 @@ end
 
 puts "la cagnote du jour est de  #{cagnote} €"
 
-# afficher si gagne ou perdu
+# afficher si gagner ou perdu
+
 puts "#{grille}"
+
+if grille = true 
+  puts "Gagner"
+else
+  puts "Perdu"
+end
+
