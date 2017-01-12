@@ -1,11 +1,22 @@
-# roll method
-def roll_f6
-   # affiche le tirage d'un dés à 6 faces
+meta = {"place" => "Roubaix", "author" => "Thomas"}
 
-    faces = [1,2,3,4,5,6]
+place = meta['place']
+author = meta['author']
 
-    roll = faces[rand 6]
- 
+# roll + roll_cheated method
+def roll_f6 (cheated_value = nil)
+roll_cheated = 1 + rand(6)
+  if cheated_value =! nil
+    # Valeur du dés pipé
+    cheated_value = roll  
+  end
+# dés à 6 faces
+roll = 1 + rand(6)    
 end
 
-puts roll_f6
+puts "Dés pipés oui/non"
+choise= gets.chomp
+
+#puts roll_f6
+
+puts "Made with lov @ #{place} by #{author}"
