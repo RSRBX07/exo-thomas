@@ -1,8 +1,3 @@
-meta = {"place" => "Roubaix", "author" => "Thomas"}
-
-place = meta['place']
-author = meta['author']
-
 # roll + roll_cheated method
 def roll_f6 (cheated_value = nil)
 roll_cheated = 1 + rand(6)
@@ -19,4 +14,6 @@ choise= gets.chomp
 
 #puts roll_f6
 
-puts "Made with lov @ #{place} by #{author}"
+class Dice
+  
+end
