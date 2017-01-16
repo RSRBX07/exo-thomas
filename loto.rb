@@ -4,7 +4,7 @@ require 'date'
 # Classe Loto
 class Loto
   
- def self.get_grid
+  def self.get_grid
     grid = []
     5.times do
       input = gets.to_i
@@ -31,7 +31,7 @@ class Loto
   # pour le loto courant
   def validate_grid grid
     # verifier que le tirage à pas eu lieu
-    if @picked_balls.empty?
+    if @picked_balls.to_a.empty?
       @saved_grids ||= []
       @saved_grids << grid
     else
