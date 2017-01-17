@@ -7,6 +7,9 @@ class Loto
   attr_reader :picked_balls
   attr_reader :saved_grids
   
+  def initialize
+    @picked_balls = []
+  end
 
   def self.get_grid
     grid = []
@@ -35,11 +38,11 @@ class Loto
   # pour le loto courant
   def validate_grid grid
     # verifier que le tirage à pas eu lieu
-    if @picked_balls.to_a.empty?
+    if @picked_balls.empty?
       @saved_grids ||= []
       @saved_grids << grid
     else
-      false
+     false
     end
   end 
 
@@ -57,10 +60,8 @@ private
   def draw
     available_balls = (1..45).to_a
     # shuffle balls and take 5
-    @picked_balls ||= available_balls.shuffle.take(5).sort
-    
-    # puts "Le tirage du jour est : #{@picked_balls.sort}" 
-    @picked_balls.sort
+    @picked_balls = available_balls.shuffle.take(5)
+    @picked_balls
   end
 
   # affichage de la cagnotte entre 100 et 500k€
