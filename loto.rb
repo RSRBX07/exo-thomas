@@ -4,6 +4,10 @@ require 'date'
 # Classe Loto
 class Loto
   
+  attr_reader :picked_balls
+  attr_reader :saved_grids
+  
+
   def self.get_grid
     grid = []
     5.times do
@@ -18,7 +22,7 @@ class Loto
   end
 
   def has_winner?
-    #comprer tous les bulletins valides avec la grille gagnante
+    #comparer tous les bulletins valides avec la grille gagnante
     sorted_draw = draw.sort
     @saved_grids.each do |grid|
       sorted_grid = grid.sort
@@ -39,6 +43,26 @@ class Loto
     end
   end 
 
+  def check_grid grid
+    # afficher si gagne ou perdu
+    if grid.sort == draw.sort
+      puts "You win #{prize}!"
+    else
+      puts "You loose !"
+    end
+  end
+
+private
+
+  def draw
+    available_balls = (1..45).to_a
+    # shuffle balls and take 5
+    @picked_balls ||= available_balls.shuffle.take(5).sort
+    
+    # puts "Le tirage du jour est : #{@picked_balls.sort}" 
+    @picked_balls.sort
+  end
+
   # affichage de la cagnotte entre 100 et 500k€
   # le vendredi 13, la cagontte est de 2 millions
 
@@ -47,30 +71,10 @@ class Loto
   end
 
   def prize
-    cagnotte = if vendredi_13?
-        2_000_000
-      else
-        100_000
-      end
-    puts "Le montant de la cagnote du jour est de #{cagnotte}"
-    cagnotte
-  end
-
-  def draw
-    available_balls = (1..45).to_a
-    # shuffle balls and take 5
-    @picked_balls ||= available_balls.shuffle.take(5)
-    
-    puts "Le tirage du jour est : #{@picked_balls.sort}" 
-    @picked_balls
-  end
-
-  def check_grid grid
-    # afficher si gagne ou perdu
-    if grid.sort == draw.sort
-      puts "You win !"
+    if vendredi_13?
+      2_000_000
     else
-      puts "You loose !"
+      100_000
     end
   end
 
