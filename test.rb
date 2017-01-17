@@ -12,16 +12,23 @@
 
 #Test Loto
 # appel la classe Loto
-require './loto.rb'
+# require './loto.rb'
 
-loto_du_samedi = Loto.new
-2.times {loto_du_samedi.validate_grid Loto.get_flash}
+# loto_du_samedi = Loto.new
+# 2.times {loto_du_samedi.validate_grid Loto.get_flash}
 
-loto_du_lundi = Loto.new
-loto_du_lundi.validate_grid Loto.get_flash
-#loto_du_lundi.check_grid(grid)
-if loto_du_lundi.has_winner?
-  puts "Someone win"
-else
-  puts "nobody win"
-end
+# loto_du_lundi = Loto.new
+# loto_du_lundi.validate_grid Loto.get_flash
+# #loto_du_lundi.check_grid(grid)
+# if loto_du_lundi.has_winner?
+#   puts "Someone win"
+# else
+#   puts "nobody win"
+# end
+
+#Test Fixnum
+# appel la classe Fixnum
+require './french_number.rb'
+
+# puts 42.respond_to? :in_french
+(0..99).each { |i| puts i.in_french }
