@@ -5,8 +5,8 @@ class  Plane < Vehicle
   attr_reader :flying
 
   def initialize
-    super
     @flying = true
+    super
   end
   
   def flight?
