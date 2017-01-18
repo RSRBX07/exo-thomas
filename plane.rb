@@ -1,19 +1,25 @@
+require_relative './vehicle'
+
 class  Plane < Vehicle
 
-  attr_reader :is_flying
+  attr_reader :flying
 
   def initialize
-    
+    super
+    @flying = true
   end
   
-  def state_in_flight
-    @is_flying = false
+  def flight?
+    @flying ||= false
   end
 
   def take_off
-    @is_flying = true
+    @flying = true
   end
 
-  def landing
-    @is_flying = false
+  def land
+    @flying = false
   end
+
+end
+
