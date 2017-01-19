@@ -1,13 +1,15 @@
 class Counter
+  path_file = "./tmp/counter.txt"
+  
   def add_one
     new_val = value +1
-    File.open "./tmp/counter.txt", "w" do |Counter_file|
+    File.open path_file, "w" do |Counter_file|
       Counter_file.write new_val
     end
   end
-  
+
   def value
-    File.open "./tmp/counter.txt", "r" do |Counter_file|
+    File.open path_file, "r" do |Counter_file|
       Counter_file.each_line {|line| return line.to_i}
     end
   end
