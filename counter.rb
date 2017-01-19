@@ -1,3 +1,5 @@
+require "yaml"
+
 class Counter
   
   def add_one
@@ -17,7 +19,7 @@ class Counter
 private
   def file_path
     dirname = File.join(File.dirname(__FILE__), '../tmp/')
-    dirname + 'counter.txt'
+    dirname + 'counter.yml'
   end
 
 end
