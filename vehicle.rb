@@ -1,16 +1,33 @@
+class Counter
+  def add_one
+    new_val = value +1
+    File.open "./tmp/counter.txt", "w" do |Counter_file|
+      Counter_file.write new_val
+    end
+  end
+  
+  def value
+    File.open "./tmp/counter.txt", "r" do |Counter_file|
+      Counter_file.each_line {|line| return line.to_i}
+    end
+  end
+end
+
+
+
 class Vehicle
 
  attr_reader :position
  attr_reader :out_of_order
 
  def self.count
-   cpt = 0
-   add cpt =+ 1
+   Counter.new.value
  end
 
  def initialize
    @position = :roubaix
    @out_of_order = false
+   Counter..new.add_one
  end
 
  def move destination
