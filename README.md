@@ -1,5 +1,7 @@
 # README
 
+[![CircleCI](https://circleci.com/gh/RSRBX07/exo-thomas.svg?style=svg)](https://circleci.com/gh/RSRBX07/exo-thomas)
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
