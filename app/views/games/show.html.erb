@@ -16,5 +16,10 @@
     <%= @game.players %>
   </p>
 
+  <p>
+    <strong>Le tirage est:</strong>
+    <%= @game.draw.sort %>
+  </p>
+
    <%= link_to 'Back', games_path %>
 </div>
